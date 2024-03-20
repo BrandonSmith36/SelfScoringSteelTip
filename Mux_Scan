@@ -1,0 +1,24 @@
+----------------------------------------------------------------------------------
+-- Company: The Citadel
+-- Engineer: Dr. Ron Hayne
+-- 
+-- Module Name: Mux_Scan
+-- 
+----------------------------------------------------------------------------------
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+
+entity Mux_Scan is
+    port ( C_SEL : in std_logic_vector (5 downto 0);
+           COL     : in std_logic_vector (0 to 36);
+           C         : out std_logic);
+end Mux_Scan;
+
+architecture Behave of Mux_Scan is
+begin
+  C <= COL(conv_integer(C_SEL));
+ -- R <= ROW(conv_integer(R_SEL));
+end Behave;
